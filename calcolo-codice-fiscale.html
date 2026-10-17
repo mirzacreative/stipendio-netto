@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcolo Codice Fiscale Online Gratis 2026</title>
+<meta name="description" content="Calcola il codice fiscale online gratis: inserisci cognome, nome, data e luogo di nascita e genera il codice fiscale ufficiale a 16 caratteri in pochi secondi.">
+<meta name="keywords" content="calcolo codice fiscale, codice fiscale online, generatore codice fiscale, calcolare codice fiscale">
+<link rel="canonical" href="https://mirzacreative.github.io/stipendio-netto/calcolo-codice-fiscale.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Calcolo Codice Fiscale Online Gratis 2026">
+<meta property="og:description" content="Genera il tuo codice fiscale ufficiale a 16 caratteri: cognome, nome, data e comune di nascita.">
+<meta property="og:url" content="https://mirzacreative.github.io/stipendio-netto/calcolo-codice-fiscale.html">
+<meta property="og:site_name" content="StipendioNetto">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Calcolo Codice Fiscale Online Gratis 2026">
+<meta name="twitter:description" content="Generatore gratuito di codice fiscale con algoritmo ufficiale.">
+<meta name="theme-color" content="#0b7a3e">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Calcolo Codice Fiscale Online","url":"https://mirzacreative.github.io/stipendio-netto/calcolo-codice-fiscale.html","inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Generatore Codice Fiscale","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://mirzacreative.github.io/stipendio-netto/calcolo-codice-fiscale.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Come si calcola il codice fiscale?","acceptedAnswer":{"@type":"Answer","text":"Il codice fiscale si compone di 16 caratteri: 3 dal cognome, 3 dal nome, 2 dall'anno di nascita, 1 dal mese, 2 dal giorno (+40 per le donne), 4 dal codice del comune di nascita e 1 carattere di controllo calcolato con un algoritmo ufficiale."}},
+{"@type":"Question","name":"Il codice fiscale generato online è valido?","acceptedAnswer":{"@type":"Answer","text":"Il generatore applica l'algoritmo ufficiale dell'Agenzia delle Entrate. In rari casi di omocodia (due persone con stessi dati) l'Agenzia sostituisce alcuni caratteri: solo il codice rilasciato ufficialmente fa fede."}},
+{"@type":"Question","name":"Cosa significa il +40 nel giorno di nascita?","acceptedAnswer":{"@type":"Answer","text":"Nel codice fiscale, al giorno di nascita si aggiungono 40 unità per le donne. Ad esempio, una donna nata il 5 avrà '45', una nata il 20 avrà '60'."}}
+]}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="./"><span class="brand-mark">SN</span><span>Stipendio<em>Netto</em></span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+<nav class="main" id="mainNav">
+<a href="./">Calcolo Stipendio</a>
+<a href="calcolo-codice-fiscale.html">Codice Fiscale</a>
+<a href="come-calcolare-stipendio-netto.html">Guida</a>
+<a href="chi-siamo.html">Chi Siamo</a>
+<a href="contatti.html">Contatti</a>
+</nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+<h1>Calcolo Codice Fiscale Online</h1>
+<p>Genera gratis il tuo codice fiscale a 16 caratteri con l'algoritmo ufficiale: inserisci i dati anagrafici e ottieni subito il codice.</p>
+</div></section>
+
+<main class="wrap">
+<div class="card">
+<h2>🧾 Generatore Codice Fiscale</h2>
+<label for="cfCognome">Cognome</label>
+<input type="text" id="cfCognome" placeholder="Es. Rossi" autocomplete="family-name">
+<label for="cfNome">Nome</label>
+<input type="text" id="cfNome" placeholder="Es. Mario" autocomplete="given-name">
+<label for="cfData">Data di nascita</label>
+<input type="date" id="cfData" min="1900-01-01" max="2026-12-31">
+<label>Sesso</label>
+<div class="radio-row">
+<label><input type="radio" name="cfSesso" value="M" checked> Uomo</label>
+<label><input type="radio" name="cfSesso" value="F"> Donna</label>
+</div>
+<label for="cfComune">Comune di nascita</label>
+<select id="cfComune">
+<option value="">— Seleziona un comune —</option>
+<option value="H501">Roma (H501)</option>
+<option value="F205">Milano (F205)</option>
+<option value="F839">Napoli (F839)</option>
+<option value="L219">Torino (L219)</option>
+<option value="D612">Firenze (D612)</option>
+<option value="A944">Bologna (A944)</option>
+<option value="D969">Genova (D969)</option>
+<option value="L736">Venezia (L736)</option>
+<option value="A662">Bari (A662)</option>
+<option value="G273">Palermo (G273)</option>
+<option value="ALTRO">Altro comune (inserisci il codice sotto)</option>
+</select>
+<label for="cfCodice">Codice catastale del comune (se "Altro")</label>
+<input type="text" id="cfCodice" placeholder="Es. H501" maxlength="4" style="text-transform:uppercase">
+<button class="btn btn-block" onclick="generaCF()">Genera Codice Fiscale</button>
+<div class="result" id="cfRisultato">
+<div class="result-head">Il tuo codice fiscale</div>
+<div class="result-body">
+<div class="cf-output" id="cfOutput"></div>
+<div class="kv"><span>Cognome (3 caratteri)</span><b id="cfD1"></b></div>
+<div class="kv"><span>Nome (3 caratteri)</span><b id="cfD2"></b></div>
+<div class="kv"><span>Data di nascita (5 caratteri)</span><b id="cfD3"></b></div>
+<div class="kv"><span>Comune (4 caratteri)</span><b id="cfD4"></b></div>
+<div class="kv"><span>Carattere di controllo</span><b id="cfD5"></b></div>
+</div>
+</div>
+<div class="note">⚠️ Il calcolo segue l'algoritmo ufficiale. In caso di <strong>omocodia</strong> (stessi dati di un'altra persona) l'Agenzia delle Entrate modifica alcuni caratteri: solo il codice rilasciato ufficialmente fa fede. Nessun dato inserito viene salvato o trasmesso: tutto avviene nel tuo browser.</div>
+</div>
+
+<div class="card faq">
+<h2>❓ Domande frequenti sul codice fiscale</h2>
+<details open><summary>Come si calcola il codice fiscale?</summary><p>16 caratteri: 3 dal cognome (prime 3 consonanti), 3 dal nome (con la regola di 1ª, 3ª e 4ª consonante se ce ne sono almeno 4), 2 dall'anno, 1 dal mese (lettera), 2 dal giorno (+40 per le donne), 4 dal codice catastale del comune di nascita e 1 carattere di controllo.</p></details>
+<details><summary>Il codice generato online è valido?</summary><p>Sì, se i dati sono corretti e non c'è omocodia. In rari casi l'Agenzia delle Entrate sostituisce alcuni caratteri con lettere: verifica sempre con i documenti ufficiali.</p></details>
+<details><summary>Cosa significa il +40 nel giorno?</summary><p>Per le donne, al giorno di nascita si sommano 40 unità: ad esempio chi è nata il giorno 5 avrà "45", chi è nata il 20 avrà "60".</p></details>
+</div>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4>StipendioNetto</h4><p style="color:#9db8a8">Calcolatori gratuiti per lavoratori e famiglie in Italia: stipendio netto e codice fiscale.</p></div>
+<div><h4>Strumenti</h4><a href="./">Calcolo stipendio netto</a><a href="calcolo-codice-fiscale.html">Calcolo codice fiscale</a></div>
+<div><h4>Guide</h4><a href="come-calcolare-stipendio-netto.html">Come calcolare lo stipendio netto</a><a href="busta-paga-guida.html">Guida alla busta paga</a><a href="codice-fiscale-guida.html">Guida al codice fiscale</a></div>
+<div><h4>Legale</h4><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-policy.html">Cookie Policy</a><a href="termini.html">Termini</a><a href="disclaimer.html">Disclaimer</a><a href="contatti.html">Contatti</a><a href="chi-siamo.html">Chi siamo</a></div>
+</div>
+<div class="base">© 2026 StipendioNetto · Algoritmo conforme alle specifiche dell'Agenzia delle Entrate.</div>
+</div></footer>
+
+<div id="cookieBanner" role="dialog" aria-label="Cookie">
+<p>Usiamo cookie tecnici e, previo consenso, cookie di profilazione anche di terze parti per offrirti un'esperienza migliore. <a href="cookie-policy.html" style="color:#8fd6a8">Leggi la Cookie Policy</a>.</p>
+<div class="row"><button id="cookieAccept">Accetta</button><button id="cookieDecline">Rifiuta</button></div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+/* Algoritmo ufficiale codice fiscale — verificato contro casi noti */
+var CF_ODD={0:1,1:0,2:5,3:7,4:9,5:13,6:15,7:17,8:19,9:21,A:1,B:0,C:5,D:7,E:9,F:13,G:15,H:17,I:19,J:21,K:2,L:4,M:18,N:20,O:11,P:3,Q:6,R:8,S:12,T:14,U:16,V:10,W:22,X:25,Y:24,Z:23};
+var CF_MONTH={1:'A',2:'B',3:'C',4:'D',5:'E',6:'H',7:'L',8:'M',9:'P',10:'R',11:'S',12:'T'};
+function cfClean(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').toUpperCase().replace(/[^A-Z]/g,'');}
+function cfPartCognome(s){s=cfClean(s);var c=s.replace(/[AEIOU]/g,''),v=s.replace(/[^AEIOU]/g,''),r=c.slice(0,3);if(r.length<3)r+=v.slice(0,3-r.length);return (r+'XXX').slice(0,3);}
+function cfPartNome(s){s=cfClean(s);var c=s.replace(/[AEIOU]/g,''),v=s.replace(/[^AEIOU]/g,''),r=c.length>=4?c.charAt(0)+c.charAt(2)+c.charAt(3):c.slice(0,3);if(r.length<3)r+=v.slice(0,3-r.length);return (r+'XXX').slice(0,3);}
+function cfCheck(p){var s=0;for(var i=0;i<15;i++){var ch=p.charAt(i);if(i%2===0){s+=CF_ODD[ch];}else{s+=/\d/.test(ch)?parseInt(ch,10):ch.charCodeAt(0)-65;}}return String.fromCharCode(65+(s%26));}
+function generaCF(){
+  var cog=document.getElementById('cfCognome').value.trim(),
+      nom=document.getElementById('cfNome').value.trim(),
+      dat=document.getElementById('cfData').value,
+      ses=document.querySelector('input[name="cfSesso"]:checked').value,
+      com=document.getElementById('cfComune').value,
+      cod=document.getElementById('cfCodice').value.trim().toUpperCase();
+  if(!cog||!nom){alert('Inserisci cognome e nome.');return;}
+  if(!dat){alert('Inserisci la data di nascita.');return;}
+  var luogo = com==='ALTRO' ? cod : com;
+  if(!/^[A-Z][0-9]{3}$/.test(luogo)){alert('Seleziona un comune dalla lista oppure inserisci un codice catastale valido (1 lettera + 3 cifre, es. H501).');return;}
+  var d=new Date(dat+'T00:00:00'), y=d.getFullYear(), m=d.getMonth()+1, g=d.getDate();
+  if(!(y>=1900&&y<=2026)){alert('Anno di nascita non valido.');return;}
+  var p1=cfPartCognome(cog), p2=cfPartNome(nom);
+  var p3=String(y).slice(-2)+CF_MONTH[m]+String(g+(ses==='F'?40:0)).padStart(2,'0');
+  var p15=p1+p2+p3+luogo, chk=cfCheck(p15), cf=p15+chk;
+  document.getElementById('cfOutput').textContent=cf;
+  document.getElementById('cfD1').textContent=p1;
+  document.getElementById('cfD2').textContent=p2;
+  document.getElementById('cfD3').textContent=p3;
+  document.getElementById('cfD4').textContent=luogo;
+  document.getElementById('cfD5').textContent=chk;
+  var r=document.getElementById('cfRisultato');r.classList.add('show');
+  r.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* StipendioNetto — shared stylesheet (mobile-first) */
+:root{
+  --green:#0b7a3e; --green-dark:#065f30; --green-light:#e8f6ee;
+  --red:#c8102e; --ink:#1a2332; --muted:#5b6b7f; --line:#e3e9f0;
+  --bg:#f7faf8; --card:#ffffff; --radius:14px;
+  --shadow:0 4px 18px rgba(11,122,62,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,'Helvetica Neue',Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+a{color:var(--green)}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.25rem}
+.brand-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--green),var(--green-dark));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem}
+.brand em{font-style:normal;color:var(--green)}
+nav.main{display:flex;gap:4px}
+nav.main a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem;padding:8px 12px;border-radius:8px}
+nav.main a:hover{background:var(--green-light);color:var(--green-dark)}
+.nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:1.1rem;cursor:pointer}
+/* Hero */
+.hero{background:linear-gradient(135deg,#0b7a3e 0%,#065f30 70%);color:#fff;padding:52px 0 46px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;
+  background:rgba(255,255,255,.06)}
+.hero h1{font-size:2rem;line-height:1.25;margin-bottom:12px;max-width:640px}
+.hero p{opacity:.92;max-width:620px;margin-bottom:0}
+/* Cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;margin:26px 0}
+.card h2{font-size:1.35rem;margin-bottom:14px;color:var(--green-dark)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+/* Forms */
+label{display:block;font-weight:600;margin:14px 0 6px;font-size:.95rem}
+input[type=text],input[type=number],input[type=date],select{width:100%;padding:13px 14px;border:1.5px solid var(--line);
+  border-radius:10px;font-size:1rem;background:#fff;color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(11,122,62,.12)}
+.radio-row{display:flex;gap:14px;margin-top:6px}
+.radio-row label{display:flex;align-items:center;gap:8px;font-weight:500;margin:0;cursor:pointer}
+.btn{display:inline-block;background:var(--green);color:#fff;border:none;border-radius:10px;padding:14px 30px;
+  font-size:1.05rem;font-weight:700;cursor:pointer;margin-top:18px;transition:.15s}
+.btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn-block{width:100%}
+/* Results */
+.result{display:none;margin-top:22px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.result.show{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.result-head{background:var(--green);color:#fff;padding:16px 22px;font-weight:700;font-size:1.1rem}
+.result-body{padding:8px 22px 20px;background:#fff}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:.98rem}
+.kv:last-child{border-bottom:none}
+.kv b{font-variant-numeric:tabular-nums}
+.kv.total{font-size:1.15rem;color:var(--green-dark)}
+.kv.total b{font-size:1.35rem}
+.cf-output{font-family:'Courier New',monospace;font-size:1.7rem;font-weight:800;letter-spacing:3px;text-align:center;
+  background:var(--green-light);border:2px dashed var(--green);border-radius:10px;padding:18px 10px;margin:14px 0;color:var(--green-dark);word-break:break-all}
+.note{background:#fff8e6;border:1px solid #f0d98c;border-radius:10px;padding:14px 16px;font-size:.9rem;color:#7a5c00;margin:18px 0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:14px 18px}
+.faq summary{cursor:pointer;font-weight:700;color:var(--green-dark)}
+.faq p{margin-top:8px;color:var(--muted)}
+/* Article */
+.article{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;margin:26px 0;box-shadow:var(--shadow)}
+.article h2{color:var(--green-dark);font-size:1.4rem;margin:26px 0 10px}
+.article h3{font-size:1.12rem;margin:20px 0 8px}
+.article p,.article li{color:#33414f;margin-bottom:10px}
+.article ul,.article ol{margin:0 0 14px 22px}
+/* Footer */
+.site-footer{background:#10231a;color:#cfe3d6;margin-top:44px;padding:38px 0 90px;font-size:.92rem}
+.site-footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.site-footer h4{color:#fff;margin-bottom:10px;font-size:1rem}
+.site-footer a{color:#cfe3d6;text-decoration:none;display:block;margin-bottom:7px}
+.site-footer a:hover{color:#fff;text-decoration:underline}
+.site-footer .base{margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.15);color:#9db8a8;font-size:.85rem}
+/* Cookie banner */
+#cookieBanner{position:fixed;left:12px;right:12px;bottom:12px;z-index:200;background:#10231a;color:#eaf4ee;
+  border-radius:14px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.35);display:none;max-width:640px;margin:0 auto}
+#cookieBanner.show{display:block}
+#cookieBanner p{font-size:.9rem;margin-bottom:12px}
+#cookieBanner .row{display:flex;gap:10px;flex-wrap:wrap}
+#cookieBanner button{border:none;border-radius:8px;padding:10px 20px;font-weight:700;cursor:pointer;font-size:.92rem}
+#cookieAccept{background:var(--green);color:#fff}
+#cookieDecline{background:transparent;color:#cfe3d6;border:1px solid #3c5a48}
+/* 404 */
+.e404{text-align:center;padding:70px 0}
+.e404 h1{font-size:4rem;color:var(--green)}
+@media(max-width:760px){
+  .grid2{grid-template-columns:1fr}
+  nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
+    border-bottom:1px solid var(--line);padding:8px 18px 14px}
+  nav.main.open{display:flex}
+  .nav-toggle{display:block}
+  .hero h1{font-size:1.55rem}
+  .site-header{position:sticky}
+  .cf-output{font-size:1.25rem;letter-spacing:2px}
+}
