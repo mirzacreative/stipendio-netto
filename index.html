@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stipendio Netto: Calcolo Stipendio Netto da RAL</title>
+<meta name="description" content="Calcola lo stipendio netto mensile e annuale partendo dalla RAL. Calcolatore gratuito con aliquote IRPEF 2026 e contributi INPS. Stima immediata e precisa.">
+<meta name="keywords" content="stipendio netto, calcolo stipendio netto, ral netto, stipendio netto mensile, calcolatore stipendio">
+<link rel="canonical" href="https://mirzacreative.github.io/stipendio-netto/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Stipendio Netto: Calcolo Stipendio Netto da RAL">
+<meta property="og:description" content="Calcola gratis lo stipendio netto mensile e annuale dalla RAL con IRPEF 2026 e INPS.">
+<meta property="og:url" content="https://mirzacreative.github.io/stipendio-netto/">
+<meta property="og:site_name" content="StipendioNetto">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Stipendio Netto: Calcolo Stipendio Netto da RAL">
+<meta name="twitter:description" content="Calcolatore gratuito: da RAL a stipendio netto mensile con IRPEF 2026 e INPS.">
+<meta name="theme-color" content="#0b7a3e">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"StipendioNetto","url":"https://mirzacreative.github.io/stipendio-netto/","inLanguage":"it"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calcolatore Stipendio Netto","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://mirzacreative.github.io/stipendio-netto/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Come si calcola lo stipendio netto dalla RAL?","acceptedAnswer":{"@type":"Answer","text":"Dalla RAL si sottraggono i contributi INPS a carico del lavoratore (circa 9,19%), ottenendo il reddito imponibile. Su questo si applica l'IRPEF a scaglioni (23% fino a 28.000€, 25% fino a 50.000€, 35% oltre). Il risultato è lo stipendio netto annuo, da dividere per 12 o 13 mensilità."}},
+{"@type":"Question","name":"Quali sono le aliquote IRPEF 2026?","acceptedAnswer":{"@type":"Answer","text":"Le aliquote IRPEF 2026 sono: 23% per redditi fino a 28.000€, 25% per la fascia 28.001–50.000€ e 35% per la parte oltre 50.000€."}},
+{"@type":"Question","name":"Quanto è il netto di 30.000€ di RAL?","acceptedAnswer":{"@type":"Answer","text":"Con 30.000€ di RAL, sottraendo INPS (9,19%) e IRPEF a scaglioni, lo stipendio netto annuo stimato è circa 20.977€, pari a circa 1.614€ al mese su 13 mensilità."}},
+{"@type":"Question","name":"Lo stipendio si divide per 12 o 13 mensilità?","acceptedAnswer":{"@type":"Answer","text":"In Italia la maggior parte dei contratti prevede 13 mensilità (con la tredicesima a dicembre). Alcuni contratti ne prevedono 14. Il calcolatore permette di scegliere."}}
+]}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="./"><span class="brand-mark">SN</span><span>Stipendio<em>Netto</em></span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+<nav class="main" id="mainNav">
+<a href="./">Calcolo Stipendio</a>
+<a href="calcolo-codice-fiscale.html">Codice Fiscale</a>
+<a href="come-calcolare-stipendio-netto.html">Guida</a>
+<a href="chi-siamo.html">Chi Siamo</a>
+<a href="contatti.html">Contatti</a>
+</nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+<h1>Calcola lo Stipendio Netto dalla RAL</h1>
+<p>Calcolatore gratuito e immediato: inserisci la retribuzione annua lorda e scopri subito lo stipendio netto mensile e annuale, con aliquote IRPEF 2026 e contributi INPS.</p>
+</div></section>
+
+<main class="wrap">
+<div class="card">
+<h2>💰 Calcolatore Stipendio Netto 2026</h2>
+<label for="ral">RAL — Retribuzione Annua Lorda (€)</label>
+<input type="number" id="ral" min="1" step="any" placeholder="Es. 30000" inputmode="decimal">
+<label for="mensilita">Numero di mensilità</label>
+<select id="mensilita">
+<option value="13" selected>13 mensilità (tredicesima)</option>
+<option value="12">12 mensilità</option>
+<option value="14">14 mensilità</option>
+</select>
+<button class="btn btn-block" onclick="calcolaStipendio()">Calcola Stipendio Netto</button>
+<div class="result" id="risultato">
+<div class="result-head">Risultato del calcolo</div>
+<div class="result-body" id="risultatoBody"></div>
+</div>
+<div class="note">⚠️ <strong>Stima semplificata.</strong> Il calcolo considera INPS 9,19% e IRPEF a scaglioni 2026. Non include addizionali regionali/comunali, detrazioni fiscali, bonus né particolarità contrattuali. Per l'importo esatto consulta la tua busta paga o un consulente.</div>
+</div>
+
+<div class="grid2">
+<div class="card">
+<h2>📊 Aliquote IRPEF 2026</h2>
+<div class="kv"><span>Fino a 28.000 €</span><b>23%</b></div>
+<div class="kv"><span>28.001 – 50.000 €</span><b>25%</b></div>
+<div class="kv"><span>Oltre 50.000 €</span><b>35%</b></div>
+<div class="kv"><span>Contributi INPS lavoratore</span><b>≈ 9,19%</b></div>
+</div>
+<div class="card">
+<h2>🧭 Altri strumenti gratuiti</h2>
+<p style="margin-bottom:12px"><strong><a href="calcolo-codice-fiscale.html">Calcolo Codice Fiscale</a></strong><br><span style="color:var(--muted);font-size:.92rem">Genera il tuo codice fiscale ufficiale in pochi secondi.</span></p>
+<p style="margin-bottom:12px"><strong><a href="come-calcolare-stipendio-netto.html">Come calcolare lo stipendio netto</a></strong><br><span style="color:var(--muted);font-size:.92rem">Guida completa con esempi pratici.</span></p>
+<p><strong><a href="busta-paga-guida.html">Leggere la busta paga</a></strong><br><span style="color:var(--muted);font-size:.92rem">Tutte le voci spiegate in modo semplice.</span></p>
+</div>
+</div>
+
+<div class="card faq">
+<h2>❓ Domande frequenti sullo stipendio netto</h2>
+<details open><summary>Come si calcola lo stipendio netto dalla RAL?</summary><p>Dalla RAL si sottraggono i contributi INPS a carico del lavoratore (circa 9,19%), ottenendo il reddito imponibile. Su questo si applica l'IRPEF a scaglioni: 23% fino a 28.000€, 25% fino a 50.000€, 35% oltre. Il risultato è il netto annuo, da dividere per le mensilità previste dal contratto.</p></details>
+<details><summary>Quali sono le aliquote IRPEF 2026?</summary><p>23% fino a 28.000€, 25% sulla fascia 28.001–50.000€, 35% sulla parte eccedente i 50.000€.</p></details>
+<details><summary>Quanto è il netto di 30.000€ di RAL?</summary><p>Circa 20.977€ annui, pari a circa 1.614€ al mese su 13 mensilità (stima semplificata senza detrazioni e addizionali).</p></details>
+<details><summary>Lo stipendio si divide per 12 o 13 mensilità?</summary><p>La maggior parte dei contratti italiani prevede 13 mensilità con la tredicesima a dicembre; alcuni (es. commercio) ne prevedono 14.</p></details>
+</div>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+<div class="cols">
+<div><h4>StipendioNetto</h4><p style="color:#9db8a8">Calcolatori gratuiti per lavoratori e famiglie in Italia: stipendio netto e codice fiscale.</p></div>
+<div><h4>Strumenti</h4><a href="./">Calcolo stipendio netto</a><a href="calcolo-codice-fiscale.html">Calcolo codice fiscale</a></div>
+<div><h4>Guide</h4><a href="come-calcolare-stipendio-netto.html">Come calcolare lo stipendio netto</a><a href="busta-paga-guida.html">Guida alla busta paga</a><a href="codice-fiscale-guida.html">Guida al codice fiscale</a></div>
+<div><h4>Legale</h4><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-policy.html">Cookie Policy</a><a href="termini.html">Termini</a><a href="disclaimer.html">Disclaimer</a><a href="contatti.html">Contatti</a><a href="chi-siamo.html">Chi siamo</a></div>
+</div>
+<div class="base">© 2026 StipendioNetto · Tutti i calcoli sono stime semplificate a scopo informativo.</div>
+</div></footer>
+
+<div id="cookieBanner" role="dialog" aria-label="Cookie">
+<p>Usiamo cookie tecnici e, previo consenso, cookie di profilazione anche di terze parti per offrirti un'esperienza migliore. <a href="cookie-policy.html" style="color:#8fd6a8">Leggi la Cookie Policy</a>.</p>
+<div class="row"><button id="cookieAccept">Accetta</button><button id="cookieDecline">Rifiuta</button></div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+var EUR = new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'});
+function calcolaStipendio(){
+  var ral = parseFloat(document.getElementById('ral').value);
+  var mens = parseInt(document.getElementById('mensilita').value,10);
+  if(!ral || ral<=0 || !isFinite(ral)){ alert('Inserisci una RAL valida maggiore di zero.'); return; }
+  var inps = ral*0.0919, imp = ral-inps;
+  var f1=Math.min(imp,28000), f2=Math.min(Math.max(imp-28000,0),22000), f3=Math.max(imp-50000,0);
+  var i1=f1*.23, i2=f2*.25, i3=f3*.35, irpef=i1+i2+i3;
+  var nettoAnn=imp-irpef, mensile=nettoAnn/mens;
+  var h='';
+  h+='<div class="kv"><span>RAL (lorda annua)</span><b>'+EUR.format(ral)+'</b></div>';
+  h+='<div class="kv"><span>Contributi INPS (9,19%)</span><b>− '+EUR.format(inps)+'</b></div>';
+  h+='<div class="kv"><span>Reddito imponibile IRPEF</span><b>'+EUR.format(imp)+'</b></div>';
+  h+='<div class="kv"><span>IRPEF 23% su '+EUR.format(f1)+'</span><b>− '+EUR.format(i1)+'</b></div>';
+  if(f2>0) h+='<div class="kv"><span>IRPEF 25% su '+EUR.format(f2)+'</span><b>− '+EUR.format(i2)+'</b></div>';
+  if(f3>0) h+='<div class="kv"><span>IRPEF 35% su '+EUR.format(f3)+'</span><b>− '+EUR.format(i3)+'</b></div>';
+  h+='<div class="kv"><span>IRPEF totale</span><b>− '+EUR.format(irpef)+'</b></div>';
+  h+='<div class="kv total"><span>Stipendio netto annuo</span><b>'+EUR.format(nettoAnn)+'</b></div>';
+  h+='<div class="kv total"><span>Netto mensile ('+mens+' mensilità)</span><b>'+EUR.format(mensile)+'</b></div>';
+  document.getElementById('risultatoBody').innerHTML=h;
+  document.getElementById('risultato').classList.add('show');
+  document.getElementById('risultato').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>
