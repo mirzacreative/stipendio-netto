@@ -27,8 +27,8 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Come si calcola lo stipendio netto dalla RAL?","acceptedAnswer":{"@type":"Answer","text":"Dalla RAL si sottraggono i contributi INPS a carico del lavoratore (circa 9,19%), ottenendo il reddito imponibile. Su questo si applica l'IRPEF a scaglioni (23% fino a 28.000€, 25% fino a 50.000€, 35% oltre). Il risultato è lo stipendio netto annuo, da dividere per 12 o 13 mensilità."}},
-{"@type":"Question","name":"Quali sono le aliquote IRPEF 2026?","acceptedAnswer":{"@type":"Answer","text":"Le aliquote IRPEF 2026 sono: 23% per redditi fino a 28.000€, 25% per la fascia 28.001–50.000€ e 35% per la parte oltre 50.000€."}},
+{"@type":"Question","name":"Come si calcola lo stipendio netto dalla RAL?","acceptedAnswer":{"@type":"Answer","text":"Dalla RAL si sottraggono i contributi INPS a carico del lavoratore (circa 9,19%), ottenendo il reddito imponibile. Su questo si applica l'IRPEF a scaglioni (23% fino a 28.000€, 35% fino a 50.000€, 43% oltre). Il risultato è lo stipendio netto annuo, da dividere per 12 o 13 mensilità."}},
+{"@type":"Question","name":"Quali sono le aliquote IRPEF 2026?","acceptedAnswer":{"@type":"Answer","text":"Le aliquote IRPEF 2026 sono: 23% per redditi fino a 28.000€, 35% per la fascia 28.001–50.000€ e 43% per la parte oltre 50.000€."}},
 {"@type":"Question","name":"Quanto è il netto di 30.000€ di RAL?","acceptedAnswer":{"@type":"Answer","text":"Con 30.000€ di RAL, sottraendo INPS (9,19%) e IRPEF a scaglioni, lo stipendio netto annuo stimato è circa 20.977€, pari a circa 1.614€ al mese su 13 mensilità."}},
 {"@type":"Question","name":"Lo stipendio si divide per 12 o 13 mensilità?","acceptedAnswer":{"@type":"Answer","text":"In Italia la maggior parte dei contratti prevede 13 mensilità (con la tredicesima a dicembre). Alcuni contratti ne prevedono 14. Il calcolatore permette di scegliere."}}
 ]}
@@ -75,8 +75,8 @@
 <div class="card">
 <h2>📊 Aliquote IRPEF 2026</h2>
 <div class="kv"><span>Fino a 28.000 €</span><b>23%</b></div>
-<div class="kv"><span>28.001 – 50.000 €</span><b>25%</b></div>
-<div class="kv"><span>Oltre 50.000 €</span><b>35%</b></div>
+<div class="kv"><span>28.001 – 50.000 €</span><b>35%</b></div>
+<div class="kv"><span>Oltre 50.000 €</span><b>43%</b></div>
 <div class="kv"><span>Contributi INPS lavoratore</span><b>≈ 9,19%</b></div>
 </div>
 <div class="card">
@@ -89,8 +89,8 @@
 
 <div class="card faq">
 <h2>❓ Domande frequenti sullo stipendio netto</h2>
-<details open><summary>Come si calcola lo stipendio netto dalla RAL?</summary><p>Dalla RAL si sottraggono i contributi INPS a carico del lavoratore (circa 9,19%), ottenendo il reddito imponibile. Su questo si applica l'IRPEF a scaglioni: 23% fino a 28.000€, 25% fino a 50.000€, 35% oltre. Il risultato è il netto annuo, da dividere per le mensilità previste dal contratto.</p></details>
-<details><summary>Quali sono le aliquote IRPEF 2026?</summary><p>23% fino a 28.000€, 25% sulla fascia 28.001–50.000€, 35% sulla parte eccedente i 50.000€.</p></details>
+<details open><summary>Come si calcola lo stipendio netto dalla RAL?</summary><p>Dalla RAL si sottraggono i contributi INPS a carico del lavoratore (circa 9,19%), ottenendo il reddito imponibile. Su questo si applica l'IRPEF a scaglioni: 23% fino a 28.000€, 35% fino a 50.000€, 43% oltre. Il risultato è il netto annuo, da dividere per le mensilità previste dal contratto.</p></details>
+<details><summary>Quali sono le aliquote IRPEF 2026?</summary><p>23% fino a 28.000€, 35% sulla fascia 28.001–50.000€, 43% sulla parte eccedente i 50.000€.</p></details>
 <details><summary>Quanto è il netto di 30.000€ di RAL?</summary><p>Circa 20.977€ annui, pari a circa 1.614€ al mese su 13 mensilità (stima semplificata senza detrazioni e addizionali).</p></details>
 <details><summary>Lo stipendio si divide per 12 o 13 mensilità?</summary><p>La maggior parte dei contratti italiani prevede 13 mensilità con la tredicesima a dicembre; alcuni (es. commercio) ne prevedono 14.</p></details>
 </div>
@@ -120,15 +120,15 @@ function calcolaStipendio(){
   if(!ral || ral<=0 || !isFinite(ral)){ alert('Inserisci una RAL valida maggiore di zero.'); return; }
   var inps = ral*0.0919, imp = ral-inps;
   var f1=Math.min(imp,28000), f2=Math.min(Math.max(imp-28000,0),22000), f3=Math.max(imp-50000,0);
-  var i1=f1*.23, i2=f2*.25, i3=f3*.35, irpef=i1+i2+i3;
+  var i1=f1*.23, i2=f2*.35, i3=f3*.43, irpef=i1+i2+i3;
   var nettoAnn=imp-irpef, mensile=nettoAnn/mens;
   var h='';
   h+='<div class="kv"><span>RAL (lorda annua)</span><b>'+EUR.format(ral)+'</b></div>';
   h+='<div class="kv"><span>Contributi INPS (9,19%)</span><b>− '+EUR.format(inps)+'</b></div>';
   h+='<div class="kv"><span>Reddito imponibile IRPEF</span><b>'+EUR.format(imp)+'</b></div>';
   h+='<div class="kv"><span>IRPEF 23% su '+EUR.format(f1)+'</span><b>− '+EUR.format(i1)+'</b></div>';
-  if(f2>0) h+='<div class="kv"><span>IRPEF 25% su '+EUR.format(f2)+'</span><b>− '+EUR.format(i2)+'</b></div>';
-  if(f3>0) h+='<div class="kv"><span>IRPEF 35% su '+EUR.format(f3)+'</span><b>− '+EUR.format(i3)+'</b></div>';
+  if(f2>0) h+='<div class="kv"><span>IRPEF 35% su '+EUR.format(f2)+'</span><b>− '+EUR.format(i2)+'</b></div>';
+  if(f3>0) h+='<div class="kv"><span>IRPEF 43% su '+EUR.format(f3)+'</span><b>− '+EUR.format(i3)+'</b></div>';
   h+='<div class="kv"><span>IRPEF totale</span><b>− '+EUR.format(irpef)+'</b></div>';
   h+='<div class="kv total"><span>Stipendio netto annuo</span><b>'+EUR.format(nettoAnn)+'</b></div>';
   h+='<div class="kv total"><span>Netto mensile ('+mens+' mensilità)</span><b>'+EUR.format(mensile)+'</b></div>';
